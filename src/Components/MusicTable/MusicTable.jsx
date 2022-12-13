@@ -4,6 +4,7 @@ const MusicTable = (props) => {
         <table>
             <thead>
                 <tr>
+                    <th>id</th>
                     <th>title</th>
                     <th>artist</th>
                     <th>album</th>
@@ -15,6 +16,7 @@ const MusicTable = (props) => {
                 {props.parentSongs.map((song, index) => {
                     return (
                     <tr>
+                        <td>{index+1}</td>
                         <td>{song.title}</td>
                         <td>{song.artist}</td>
                         <td>{song.album}</td>
