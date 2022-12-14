@@ -38,14 +38,18 @@ function App() {
       <div>
         <NavBar/>
       </div>
-      <div className="nav_font">
-        <MusicTable parentSongs = {songs}/>
-      </div>
-      <div>
-        <CreateNewSong addNewSongProperty = {addNewSong}/>
-      </div>
-      <div>
-        <SearchBar search={search}/>
+      <div className="flex-container-for-search-bar-and-music-table-add-new-song">
+        <div>
+          <CreateNewSong addNewSongProperty = {addNewSong}/>
+        </div>
+        <div className="flex-container-for-search-bar-and-music-table">
+          <div>
+            <SearchBar search={search}/>
+          </div>
+          <div className="nav_font">
+            <MusicTable parentSongs = {songs}/>
+          </div>
+        </div>
       </div>
     </div>
   );

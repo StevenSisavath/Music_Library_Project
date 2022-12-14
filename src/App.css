@@ -17,9 +17,6 @@ ul {
     font-size: xx-large;
   }
 
-.background{
-    background: #ebfffc;
-}
 
 .nav_font{
     font-family: Arial, Helvetica, sans-serif;
@@ -42,4 +39,21 @@ padding-bottom: 12px;
 text-align: left;
 background-color: #04AA6D;
 color: white;
+}
+
+.flex-container-for-search-bar-and-music-table{
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-container-for-search-bar-and-music-table-add-new-song{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 5em;
 }
