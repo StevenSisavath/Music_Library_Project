@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import MusicTable from "./Components/MusicTable/MusicTable";
 import CreateNewSong from "./Components/CreateNewSong/CreateNewSong";
 import SearchBar from "./Components/SearchBar/SearchBar";
+import NavBar from "./Components/NavigationBar/NavigationBar";
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -33,10 +34,9 @@ function App() {
 
   return (
     <div>
+      <NavBar/>
       <MusicTable parentSongs = {songs}/>
-      <br></br>
       <CreateNewSong addNewSongProperty = {addNewSong}/>
-      <br></br>
       <SearchBar search={search}/>
     </div>
   );
