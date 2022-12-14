@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import MusicTable from "./Components/MusicTable/MusicTable";
 import CreateNewSong from "./Components/CreateNewSong/CreateNewSong";
+import SearchBar from "./Components/SearchBar/SearchBar";
 
 function App() {
   const [songs, setSongs] = useState([]);
+  
 
   useEffect(() => {
     fetchSongs();
@@ -23,10 +25,19 @@ function App() {
     }
   };
 
+  function search(searchTerm){
+    console.log(songs.filter(song => song.title.includes(searchTerm) || song.artist.includes(searchTerm) || song.album.includes(searchTerm) || song.release_date.includes(searchTerm) || song.genre.includes(searchTerm)))
+    const filtered = (songs.filter(song => song.title.toLowerCase().includes(searchTerm) || song.artist.includes(searchTerm) || song.album.includes(searchTerm) || song.release_date.includes(searchTerm) || song.genre.includes(searchTerm)))
+    setSongs(filtered)
+  };
+
   return (
     <div>
       <MusicTable parentSongs = {songs}/>
+      <br></br>
       <CreateNewSong addNewSongProperty = {addNewSong}/>
+      <br></br>
+      <SearchBar search={search}/>
     </div>
   );
 }
