@@ -21,7 +21,7 @@ function App() {
   };
 
   async function addNewSong(newSong){
-    let response = await axios.post('http://127.0.0.1:8000/api/songs/', newSong);
+    let response = await axios.post('http://127.0.0.1:8000/api/songs/'+songs.id+'/', newSong);
     if(response.status === 201){
       await fetchSongs();
     }
